@@ -7,13 +7,13 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => 'Copyright', :text => 'Copyright ©2023 SimpliFi' }
   spec.author       = { 'Daud Mujib' => 'daud.mujib@simplifipay.com' }
   spec.platform     = :ios, '13.0'
-  #spec.source       = { :http => 'https://www.dropbox.com/s/s95c8ny1vf4l7ff/SimpliFiEkyc.framework.zip?dl=1' }
-  spec.source       = { :http => 'https://www.dropbox.com/s/w6tv3mz39avrzhu/SimpliFiEkyc.xcframework.zip?dl=1' }
-  spec.ios.vendored_frameworks = 'SimpliFiEkyc.xcframework'
+  spec.source       = { :http => 'https://www.dropbox.com/s/s95c8ny1vf4l7ff/SimpliFiEkyc.framework.zip?dl=1' }
+  #spec.source       = { :http => 'https://www.dropbox.com/s/w6tv3mz39avrzhu/SimpliFiEkyc.xcframework.zip?dl=1' }
+  spec.ios.vendored_frameworks = 'SimpliFiEkyc.framework'
   spec.swift_version = '5.0'
 
 
-  spec.xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '$(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/SimpliFiEkyc/SimpliFiEkyc.xcframework/ios-arm64/SimpliFiEkyc.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport/GoogleDataTransport.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilitiesComponents/GoogleUtilitiesComponents.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Protobuf/Protobuf.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/GoogleMLKit" $(inherited) ${PODS_ROOT}/GoogleMLKit/MLKitCore/Sources' }
+  spec.xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '$(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/SimpliFiEkyc/SimpliFiEkyc.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport/GoogleDataTransport.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilitiesComponents/GoogleUtilitiesComponents.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Protobuf/Protobuf.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/GoogleMLKit" $(inherited) ${PODS_ROOT}/GoogleMLKit/MLKitCore/Sources' }
 
 
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
