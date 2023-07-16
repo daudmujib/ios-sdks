@@ -5,22 +5,37 @@
 ## Overview
 SimpliFiCard SDK provides a powerful set of card-related functionalities for seamless integration into your mobile applications. With SimpliFiCard, developers can easily implement features such as displaying card details, requesting physical cards, activating cards, retrieving PINs, and setting PINs. This SDK ensures a smooth and secure experience for users when managing card information.
 
+Installation
+
+To install SimpliFiCard SDK, follow these steps:
+
+Certainly! Here's the updated installation section with the additional information:
+
 ## Installation
 To install SimpliFiCard SDK, follow these steps:
 
-1. Add SimpliFiCard as a dependency in your project's `Podfile`:
+1. Add the SimpliFiCard source repository at the top of your `Podfile`:
+   ```
+   source 'https://github.com/daudmujib/ios-sdks.git'
+   ```
+
+2. Add SimpliFiCard as a dependency in your project's `Podfile`:
    ```
    pod 'SimpliFiCard'
    ```
 
-2. Run `pod install` in your project directory to install the SDK and its dependencies.
+3. Run `pod install` in your project directory to install the SDK and its dependencies.
 
-3. Import the SimpliFiCard module in your Swift files:
+4. Import the SimpliFiCard module in your Swift files:
    ```
    import SimpliFiCard
    ```
 
-4. You're now ready to use SimpliFiCard in your project.
+5. You're now ready to use SimpliFiCard in your project.
+
+Please make sure to include the repository source as mentioned in step 1 to access the SimpliFiCard SDK from the provided source repository.
+
+Feel free to customize the documentation further to suit your needs.
 
 ## API Reference
 
