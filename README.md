@@ -16,16 +16,20 @@ The SimpliFi SDK provides a set of powerful functionalities for seamless integra
 - [Release Notes and Versioning](#release-notes-and-versioning)
 - [Support and Contact Information](#support-and-contact-information)
 
+Certainly! Here's the updated installation section with the additional snippet included:
+
 ## Installation
 To install the SimpliFi SDK, follow these steps:
 
 1. Add the SimpliFi source repository at the top of your `Podfile`:
-   ```
+   ```ruby
+   source 'https://cdn.cocoapods.org/'
+   source 'https://github.com/idwise/ios-sdk'
    source 'https://github.com/daudmujib/ios-sdks.git'
    ```
 
 2. Add SimpliFiCard and SimpliFiEkyc as dependencies in your project's `Podfile`:
-   ```
+   ```ruby
    pod 'SimpliFiCard'
    pod 'SimpliFiEkyc'
    ```
@@ -33,12 +37,34 @@ To install the SimpliFi SDK, follow these steps:
 3. Run `pod install` in your project directory to install the SDKs and their dependencies.
 
 4. Import the SimpliFiCard and SimpliFiEkyc modules in your Swift files:
-   ```
+   ```swift
    import SimpliFiCard
    import SimpliFiEkyc
    ```
 
-You're now ready to use the SimpliFiCard and SimpliFiEkyc SDKs in your project.
+5. If you're using the SimpliFiEkyc SDK, add the following snippet to your `Podfile` to configure specific build settings:
+   ```ruby
+   post_install do |installer|
+       installer.pods_project.targets.each do |target|
+         target.build_configurations.each do |config|
+           config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+   
+           if ['MLKitObjectDetection-MLKitObjectDetectionResources',
+               'MLKitObjectDetectionCommon-MLKitObjectDetectionCommonResources',
+               'MLKitTextRecognition-LatinOCRResources'].include?(target.name)
+                 config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+           end
+   
+           if ['AEOTPTextField',
+               'Mixpanel-swift'].include?(target.name)
+               config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+           end
+         end
+       end
+   end
+   ```
+
+Make sure to replace the placeholder URLs and version numbers with the actual values for your SDKs. The additional snippet provided in step 5 is specific to the SimpliFiEkyc SDK and includes configuration settings for specific build targets.
 
 ## SDK Initialization
 Before using the SimpliFi SDKs, you need to initialize the SDK with the base URL and other necessary configurations. To initialize the SDK, use the following method:
