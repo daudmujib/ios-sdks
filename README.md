@@ -64,7 +64,8 @@ To install the SimpliFi SDK, follow these steps:
    end
    ```
 
-Make sure to replace the placeholder URLs and version numbers with the actual values for your SDKs. The additional snippet provided in step 5 is specific to the SimpliFiEkyc SDK and includes configuration settings for specific build targets.
+**Note:**
+The SimpliFi SDK requires a minimum iOS version of 13.0 or later. Please ensure that your project's deployment target is set accordingly.
 
 ## SDK Initialization
 Before using the SimpliFi SDKs, you need to initialize the SDK with the base URL and other necessary configurations. To initialize the SDK, use the following method:
