@@ -5,6 +5,7 @@ The SimpliFi SDK provides a set of powerful functionalities for seamless integra
 
 ## Table of Contents
 - [Installation](#installation)
+- [SDK Initialization](#sdk-initialization)
 - [SimpliFiCard SDK](#simplificard-sdk)
   - [API Reference](#api-reference)
   - [SFRequest Structure](#sfrequest-structure)
@@ -38,6 +39,25 @@ To install the SimpliFi SDK, follow these steps:
    ```
 
 You're now ready to use the SimpliFiCard and SimpliFiEkyc SDKs in your project.
+
+## SDK Initialization
+Before using the SimpliFi SDKs, you need to initialize the SDK with the base URL and other necessary configurations. To initialize the SDK, use the following method:
+
+### `SFCore.initialize(baseUrl: String)`
+
+Initializes the SimpliFi SDK with the provided base URL.
+
+- `baseUrl`: A string representing the base URL of the SimpliFi server.
+
+This method initializes the networking stack, logger, and sets the default theme. It should be called once during the application's initialization process.
+
+Here's an example of how to initialize the SimpliFi SDK:
+
+```swift
+SFCore.initialize(baseUrl: "https://api.simplifipay.com")
+```
+
+Make sure to replace the `baseUrl` parameter with the actual base URL of your SimpliFi server.
 
 ## SimpliFiCard SDK
 The SimpliFiCard SDK provides a powerful set of card-related functionalities for seamless integration into your mobile applications. With SimpliFiCard, developers can easily implement features such as displaying card details, requesting physical cards, activating cards, retrieving PINs, and setting PINs. This SDK ensures a smooth and secure experience for users when managing card information.
@@ -114,14 +134,16 @@ The `EkycDelegate` protocol defines the methods that can be implemented by a del
 Make sure to implement the `EkycDelegate` methods to handle the eKYC verification process events and provide appropriate actions or feedback to the users.
 
 ## Security Considerations
-SimpliFi SDKs prioritize security when handling sensitive data, such as card information and user verification details. The SDKs implement encryption mechanisms and follow industry best practices to ensure the confidentiality and integrity of the data. However, it is essential to implement additional security measures in your application to protect user data and comply with relevant regulations.
+SimpliFi SDKs prioritize security when handling sensitive data, such as card information and user
+
+ verification details. The SDKs implement encryption mechanisms and follow industry best practices to ensure the confidentiality and integrity of the data. However, it is essential to implement additional security measures in your application to protect user data and comply with relevant regulations.
 
 ## Release Notes and Versioning
-- SimpliFiCard SDK, version 1.0.0
+- SimpliFiCard SDK, version 3.0.0
   - Initial release of SimpliFiCard SDK.
   - Added methods for showing card details, requesting physical cards, activating cards, retrieving PINs, and setting PINs.
 
-- SimpliFiEkyc SDK, version 1.0.0
+- SimpliFiEkyc SDK, version 3.0.0
   - Initial release of SimpliFiEkyc SDK.
   - Added method for initiating eKYC verification journeys.
 
