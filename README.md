@@ -50,6 +50,24 @@ Please make sure to include the repository source as mentioned in step 1 to acce
 
 Feel free to customize the documentation further to suit your needs.
 
+## Logger
+
+The SimpliFiCard SDK includes the SimpliFiLogger SDK as a dependency. The logger provides logging capabilities for network errors to Mixpanel. By default, SimpliFiCard SDK logs any errors that occur during network calls to Mixpanel. These logs do not include any user-related or sensitive data.
+
+To enable logging, use the following method:
+
+```swift
+SFLogger.enableLogging()
+```
+
+To disable logging, use the following method:
+
+```swift
+SFLogger.disableLogging()
+```
+
+Note: Logging is enabled by default.
+
 ## API Reference
 
 ### `SFCard.showDetail(for request: SFRequest, on controller: UIViewController)`
