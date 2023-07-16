@@ -30,8 +30,21 @@ To install SimpliFiCard SDK, follow these steps:
    ```
    import SimpliFiCard
    ```
+5. Initialize the SDK with the base URL using the following method:
+   ```
+   SFCore.initialize(baseUrl: String)
+   ```
+   This method initializes the networking stack, logger, and sets the default theme.
 
-5. You're now ready to use SimpliFiCard in your project.
+   **Parameters:**
+   - `baseUrl`: The base URL for the SimpliFiCard API as a string.
+
+   **Example:**
+   ```swift
+   SFCore.initialize(baseUrl: "https://api.simplificard.com")
+   ```
+
+6. You're now ready to use SimpliFiCard in your project.
 
 Please make sure to include the repository source as mentioned in step 1 to access the SimpliFiCard SDK from the provided source repository.
 
