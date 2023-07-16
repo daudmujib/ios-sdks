@@ -24,27 +24,27 @@ To install SimpliFiCard SDK, follow these steps:
 
 ## API Reference
 
-### `showDetail(request: SFRequest, controller: UIViewController)`
+### `showDetail(for request: SFRequest, on controller: UIViewController)`
 
 Displays the card details based on the provided `SFRequest` parameters.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for fetching card details.
 - `controller`: The view controller from which the card details should be presented.
 
-### `requestPhysicalCard(request: SFRequest, controller: UIViewController)`
+### `requestPhysicalCard(for request: SFRequest, on controller: UIViewController)`
 
 Requests the conversion of a virtual card to a physical card.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for the request.
 - `controller`: The view controller from which the request should be initiated.
 
-### `activate(request: SFRequest)`
+### `activate(for request: SFRequest, on controller: UIViewController)`
 
 Activates a card based on the provided `SFRequest` parameters.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for card activation.
 
-### `getPin(request: SFRequest) -> String`
+### `getPin(for request: SFRequest, on controller: UIViewController)`
 
 Retrieves the PIN of a card using the corresponding `SFRequest` parameters.
 
@@ -52,7 +52,7 @@ Retrieves the PIN of a card using the corresponding `SFRequest` parameters.
 
 - Returns: A `String` representing the PIN of the card.
 
-### `setPin(request: SFRequest, pin: String)`
+### `setPin(for request: SFRequest, on controller: UIViewController)`
 
 Sets the PIN of a card.
 
