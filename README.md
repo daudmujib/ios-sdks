@@ -74,14 +74,14 @@ The SimpliFiCard SDK allows you to override the default theme using the SimpliFi
 
 Here are the variables you can override:
 
-- `headerFont`: The font for header text. Default: SFFont.montserrat
-- `bodyFont`: The font for body text. Default: SFFont.montserrat
-- `backgroundColor`: The background color of views. Default: SFColor.white
-- `buttonBackgroundColor`: The background color of buttons. Default: SFColor.blue
-- `buttonTextColor`: The text color of buttons. Default: SFColor.white
-- `bodyTextColor`: The text color of body text. Default: SFColor.black
-- `cardTextColor`: The text color of card-related elements. Default: SFColor.white
-- `headerTextColor`: The text color of header text. Default: SFColor.black
+- `headerFont`: The font for header text. Default: `SFFont.montserrat`
+- `bodyFont`: The font for body text. Default: `SFFont.montserrat`
+- `backgroundColor`: The background color of views. Default: `SFColor.white`
+- `buttonBackgroundColor`: The background color of buttons. Default: `SFColor.blue`
+- `buttonTextColor`: The text color of buttons. Default: `SFColor.white`
+- `bodyTextColor`: The text color of body text. Default: `SFColor.black`
+- `cardTextColor`: The text color of card-related elements. Default: `SFColor.white`
+- `headerTextColor`: The text color of header text. Default: `SFColor.black`
 
 The `SFFont` and `SFColor` enums are used to define the available font and color options. You can use these enums to set the desired fonts and colors.
 
