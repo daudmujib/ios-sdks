@@ -68,6 +68,37 @@ SFLogger.disableLogging()
 
 Note: Logging is enabled by default.
 
+## Theme Customization
+
+The SimpliFiCard SDK allows you to override the default theme using the SimpliFiTheme SDK, which is included as a dependency. By setting the appropriate variables, you can customize the look of the views displayed by the SDK.
+
+Here are the variables you can override:
+
+- `headerFont`: The font for header text. Default: SFFont.montserrat
+- `bodyFont`: The font for body text. Default: SFFont.montserrat
+- `backgroundColor`: The background color of views. Default: SFColor.white
+- `buttonBackgroundColor`: The background color of buttons. Default: SFColor.blue
+- `buttonTextColor`: The text color of buttons. Default: SFColor.white
+- `bodyTextColor`: The text color of body text. Default: SFColor.black
+- `cardTextColor`: The text color of card-related elements. Default: SFColor.white
+- `headerTextColor`: The text color of header text. Default: SFColor.black
+
+The `SFFont` and `SFColor` enums are used to define the available font and color options. You can use these enums to set the desired fonts and colors.
+
+**Example:**
+```swift
+SimpliFiTheme.headerFont = .bukra
+SimpliFiTheme.bodyFont = .bukra
+SimpliFiTheme.backgroundColor = .gray
+SimpliFiTheme.buttonBackgroundColor = .blue
+SimpliFiTheme.buttonTextColor = .white
+SimpliFiTheme.bodyTextColor = .black
+SimpliFiTheme.cardTextColor = .white
+SimpliFiTheme.headerTextColor = .black
+```
+
+Please note that these theme customization options are provided to give you flexibility in matching the SDK appearance with your application's design.
+
 ## API Reference
 
 ### `SFCard.showDetail(for request: SFRequest, on controller: UIViewController)`
@@ -127,3 +158,6 @@ SimpliFiCard SDK prioritizes security when handling card information. It impleme
 ## Support and Contact Information
 
 If you need any assistance or have questions regarding SimpliFiCard SDK, you can reach out to our support team at support@simplifipay.com.
+```
+
+Please customize the documentation further to suit your needs.
