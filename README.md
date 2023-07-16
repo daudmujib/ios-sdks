@@ -1,142 +1,85 @@
-# SimpliFiCard SDK Documentation
-
-**SDK Name:** SimpliFiCard
+# SimpliFi SDK Documentation
 
 ## Overview
-SimpliFiCard SDK provides a powerful set of card-related functionalities for seamless integration into your mobile applications. With SimpliFiCard, developers can easily implement features such as displaying card details, requesting physical cards, activating cards, retrieving PINs, and setting PINs. This SDK ensures a smooth and secure experience for users when managing card information.
+The SimpliFi SDK provides a set of powerful functionalities for seamless integration into your mobile applications. With SimpliFi, developers can easily implement features related to card management and electronic Know Your Customer (eKYC) verification. This documentation will guide you through the installation process and provide detailed information about the available APIs.
 
-Installation
-
-To install SimpliFiCard SDK, follow these steps:
-
-Certainly! Here's the updated installation section with the additional information:
+## Table of Contents
+- [Installation](#installation)
+- [SimpliFiCard SDK](#simplificard-sdk)
+  - [API Reference](#api-reference)
+  - [SFRequest Structure](#sfrequest-structure)
+- [SimpliFiEkyc SDK](#simplifiekyc-sdk)
+  - [API Reference](#api-reference-1)
+  - [EkycDelegate Protocol](#ekycdelegate-protocol)
+- [Security Considerations](#security-considerations)
+- [Release Notes and Versioning](#release-notes-and-versioning)
+- [Support and Contact Information](#support-and-contact-information)
 
 ## Installation
-To install SimpliFiCard SDK, follow these steps:
+To install the SimpliFi SDK, follow these steps:
 
-1. Add the SimpliFiCard source repository at the top of your `Podfile`:
+1. Add the SimpliFi source repository at the top of your `Podfile`:
    ```
    source 'https://github.com/daudmujib/ios-sdks.git'
    ```
 
-2. Add SimpliFiCard as a dependency in your project's `Podfile`:
+2. Add SimpliFiCard and SimpliFiEkyc as dependencies in your project's `Podfile`:
    ```
    pod 'SimpliFiCard'
+   pod 'SimpliFiEkyc'
    ```
 
-3. Run `pod install` in your project directory to install the SDK and its dependencies.
+3. Run `pod install` in your project directory to install the SDKs and their dependencies.
 
-4. Import the SimpliFiCard module in your Swift files:
+4. Import the SimpliFiCard and SimpliFiEkyc modules in your Swift files:
    ```
    import SimpliFiCard
-   ```
-5. Initialize the SDK with the base URL using the following method:
-   ```
-   SFCore.initialize(baseUrl: String)
-   ```
-   This method initializes the networking stack, logger, and sets the default theme.
-
-   **Parameters:**
-   - `baseUrl`: The base URL for the SimpliFiCard API as a string.
-
-   **Example:**
-   ```swift
-   SFCore.initialize(baseUrl: "BASE_URL_PROVIDED_BY_SIMPLIFI_TEAM")
+   import SimpliFiEkyc
    ```
 
-6. You're now ready to use SimpliFiCard in your project.
+You're now ready to use the SimpliFiCard and SimpliFiEkyc SDKs in your project.
 
-Please make sure to include the repository source as mentioned in step 1 to access the SimpliFiCard SDK from the provided source repository.
+## SimpliFiCard SDK
+The SimpliFiCard SDK provides a powerful set of card-related functionalities for seamless integration into your mobile applications. With SimpliFiCard, developers can easily implement features such as displaying card details, requesting physical cards, activating cards, retrieving PINs, and setting PINs. This SDK ensures a smooth and secure experience for users when managing card information.
 
-Feel free to customize the documentation further to suit your needs.
+### API Reference
 
-## Logger
-
-The SimpliFiCard SDK includes the SimpliFiLogger SDK as a dependency. The logger provides logging capabilities for network errors to Mixpanel. By default, SimpliFiCard SDK logs any errors that occur during network calls to Mixpanel. These logs do not include any user-related or sensitive data.
-
-To enable logging, use the following method:
-
-```swift
-SFLogger.enableLogging()
-```
-
-To disable logging, use the following method:
-
-```swift
-SFLogger.disableLogging()
-```
-
-Note: Logging is enabled by default.
-
-## Theme Customization
-
-The SimpliFiCard SDK allows you to override the default theme using the SimpliFiTheme SDK, which is included as a dependency. By setting the appropriate variables, you can customize the look of the views displayed by the SDK.
-
-Here are the variables you can override:
-
-- `headerFont`: The font for header text. Default: `SFFont.montserrat`
-- `bodyFont`: The font for body text. Default: `SFFont.montserrat`
-- `backgroundColor`: The background color of views. Default: `SFColor.white`
-- `buttonBackgroundColor`: The background color of buttons. Default: `SFColor.blue`
-- `buttonTextColor`: The text color of buttons. Default: `SFColor.white`
-- `bodyTextColor`: The text color of body text. Default: `SFColor.black`
-- `cardTextColor`: The text color of card-related elements. Default: `SFColor.white`
-- `headerTextColor`: The text color of header text. Default: `SFColor.black`
-
-The `SFFont` and `SFColor` enums are used to define the available font and color options. You can use these enums to set the desired fonts and colors.
-
-**Example:**
-```swift
-SimpliFiTheme.headerFont = .bukra
-SimpliFiTheme.bodyFont = .bukra
-SimpliFiTheme.backgroundColor = .gray
-SimpliFiTheme.buttonBackgroundColor = .blue
-SimpliFiTheme.buttonTextColor = .white
-SimpliFiTheme.bodyTextColor = .black
-SimpliFiTheme.cardTextColor = .white
-SimpliFiTheme.headerTextColor = .black
-```
-
-Please note that these theme customization options are provided to give you flexibility in matching the SDK appearance with your application's design.
-
-## API Reference
-
-### `SFCard.showDetail(for request: SFRequest, on controller: UIViewController)`
+#### `SFCard.showDetail(for request: SFRequest, on controller: UIViewController)`
 
 Displays the card details based on the provided `SFRequest` parameters.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for fetching card details.
 - `controller`: The view controller from which the card details should be presented.
 
-### `SFCard.requestPhysicalCard(for request: SFRequest, on controller: UIViewController)`
+#### `SFCard.requestPhysicalCard(for request: SFRequest, on controller: UIViewController)`
 
 Requests the conversion of a virtual card to a physical card.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for the request.
 - `controller`: The view controller from which the request should be initiated.
 
-### `SFCard.activate(for request: SFRequest, on controller: UIViewController)`
+#### `SFCard.activate(for request: SFRequest, on controller: UIViewController)`
 
 Activates a card based on the provided `SFRequest` parameters.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for card activation.
 - `controller`: The view controller from which the request should be initiated.
 
-### `SFCard.getPin(for request: SFRequest, on controller: UIViewController)`
+#### `SFCard.getPin(for request: SFRequest, on controller: UIViewController)`
 
-Show the PIN of a card using the corresponding `SFRequest` parameters.
+Shows the PIN of a card using the corresponding `SFRequest` parameters.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for fetching the PIN.
 - `controller`: The view controller from which the request should be initiated.
 
-### `SFCard.setPin(for request: SFRequest, on controller: UIViewController)`
+#### `SFCard.setPin(for request: SFRequest, on controller: UIViewController)`
 
 Sets the PIN of a card.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for setting the PIN.
 - `controller`: The view controller from which the request should be initiated.
 
-## SFRequest Structure
+##### SFRequest Structure
 
 The `SFRequest` structure defines the parameters required for making requests to SimpliFiCard methods. It includes the following properties:
 
@@ -145,16 +88,42 @@ The `SFRequest` structure defines the parameters required for making requests to
 - `companyUuid`: The UUID of the company.
 - `token`: The authentication token for the request.
 
-## Security Considerations
+## SimpliFiEkyc SDK
+The SimpliFiEkyc SDK enables electronic Know Your Customer (eKYC) verification within your mobile applications. With SimpliFiEkyc, developers can easily initiate eKYC journeys, track their progress, and handle the verification results. This SDK streamlines the user verification process and enhances the security of your application.
 
-SimpliFiCard SDK prioritizes security when handling card information. It implements encryption mechanisms and follows industry best practices to ensure the confidentiality and integrity of sensitive data. However, it is important to implement additional security measures in your application to protect user data.
+### API Reference
+
+#### `SFEkyc.start(for request: SFRequest, on controller: UIViewController, delegate: EkycDelegate?)`
+
+Starts the electronic Know Your Customer (eKYC) verification process based on the provided `SFRequest` parameters.
+
+- `request`: An `SFRequest` object that includes the necessary parameters for the eKYC verification.
+- `controller`: The view controller from which the eKYC verification process should be initiated.
+- `delegate`: An optional `EkycDelegate` object that acts as the delegate for the eKYC verification process.
+
+##### `EkycDelegate` Protocol
+
+The `EkycDelegate` protocol defines the methods that can be implemented by a delegate to receive eKYC verification process-related events. It includes the following methods:
+
+- `journeyStarted(journeyID: String)`: Called when the eKYC verification journey is started. The `journeyID` parameter represents the unique identifier for the journey.
+- `onJourneyResumed(journeyID: String)`: Called when the eKYC verification journey is resumed. The `journeyID` parameter represents the unique identifier for the journey.
+- `journeyCancelled()`: Called when the eKYC verification journey is cancelled.
+- `journeyFinished()`: Called when the eKYC verification journey is successfully completed.
+- `onError(error: NSError)`: Called when an error occurs during the eKYC verification process. The `error` parameter represents the error that occurred.
+
+Make sure to implement the `EkycDelegate` methods to handle the eKYC verification process events and provide appropriate actions or feedback to the users.
+
+## Security Considerations
+SimpliFi SDKs prioritize security when handling sensitive data, such as card information and user verification details. The SDKs implement encryption mechanisms and follow industry best practices to ensure the confidentiality and integrity of the data. However, it is essential to implement additional security measures in your application to protect user data and comply with relevant regulations.
 
 ## Release Notes and Versioning
-
-- Version 3.0.0
+- SimpliFiCard SDK, version 1.0.0
   - Initial release of SimpliFiCard SDK.
   - Added methods for showing card details, requesting physical cards, activating cards, retrieving PINs, and setting PINs.
 
-## Support and Contact Information
+- SimpliFiEkyc SDK, version 1.0.0
+  - Initial release of SimpliFiEkyc SDK.
+  - Added method for initiating eKYC verification journeys.
 
-If you need any assistance or have questions regarding SimpliFiCard SDK, you can reach out to our support team at support@simplifipay.com.
+## Support and Contact Information
+If you need any assistance or have questions regarding SimpliFi SDKs, you can reach out to our support team at support@simplifipay.com.
