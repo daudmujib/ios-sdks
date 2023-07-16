@@ -1,7 +1,3 @@
-Certainly! Here's the formatted SDK documentation suitable for your developer's page on a website:
-
----
-
 # SimpliFiCard SDK Documentation
 
 **SDK Name:** SimpliFiCard
@@ -85,7 +81,3 @@ SimpliFiCard SDK prioritizes security when handling card information. It impleme
 ## Support and Contact Information
 
 If you need any assistance or have questions regarding SimpliFiCard SDK, you can reach out to our support team at support@simplificard.com. Additionally, you can visit our website at www.simplificard.com for further documentation, FAQs, and community forums to engage with other developers.
-
----
-
-Feel free to customize the documentation as needed and include any additional details specific to your SDK.
