@@ -158,6 +158,3 @@ SimpliFiCard SDK prioritizes security when handling card information. It impleme
 ## Support and Contact Information
 
 If you need any assistance or have questions regarding SimpliFiCard SDK, you can reach out to our support team at support@simplifipay.com.
-```
-
-Please customize the documentation further to suit your needs.
