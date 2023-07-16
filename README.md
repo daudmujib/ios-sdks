@@ -39,35 +39,35 @@ Feel free to customize the documentation further to suit your needs.
 
 ## API Reference
 
-### `showDetail(for request: SFRequest, on controller: UIViewController)`
+### `SFCard.showDetail(for request: SFRequest, on controller: UIViewController)`
 
 Displays the card details based on the provided `SFRequest` parameters.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for fetching card details.
 - `controller`: The view controller from which the card details should be presented.
 
-### `requestPhysicalCard(for request: SFRequest, on controller: UIViewController)`
+### `SFCard.requestPhysicalCard(for request: SFRequest, on controller: UIViewController)`
 
 Requests the conversion of a virtual card to a physical card.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for the request.
 - `controller`: The view controller from which the request should be initiated.
 
-### `activate(for request: SFRequest, on controller: UIViewController)`
+### `SFCard.activate(for request: SFRequest, on controller: UIViewController)`
 
 Activates a card based on the provided `SFRequest` parameters.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for card activation.
 - `controller`: The view controller from which the request should be initiated.
 
-### `getPin(for request: SFRequest, on controller: UIViewController)`
+### `SFCard.getPin(for request: SFRequest, on controller: UIViewController)`
 
 Show the PIN of a card using the corresponding `SFRequest` parameters.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for fetching the PIN.
 - `controller`: The view controller from which the request should be initiated.
 
-### `setPin(for request: SFRequest, on controller: UIViewController)`
+### `SFCard.setPin(for request: SFRequest, on controller: UIViewController)`
 
 Sets the PIN of a card.
 
