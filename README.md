@@ -43,21 +43,21 @@ Requests the conversion of a virtual card to a physical card.
 Activates a card based on the provided `SFRequest` parameters.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for card activation.
+- `controller`: The view controller from which the request should be initiated.
 
 ### `getPin(for request: SFRequest, on controller: UIViewController)`
 
-Retrieves the PIN of a card using the corresponding `SFRequest` parameters.
+Show the PIN of a card using the corresponding `SFRequest` parameters.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for fetching the PIN.
-
-- Returns: A `String` representing the PIN of the card.
+- `controller`: The view controller from which the request should be initiated.
 
 ### `setPin(for request: SFRequest, on controller: UIViewController)`
 
 Sets the PIN of a card.
 
 - `request`: An `SFRequest` object that includes the necessary parameters for setting the PIN.
-- `pin`: A `String` representing the new PIN for the card.
+- `controller`: The view controller from which the request should be initiated.
 
 ## SFRequest Structure
 
@@ -74,7 +74,7 @@ SimpliFiCard SDK prioritizes security when handling card information. It impleme
 
 ## Release Notes and Versioning
 
-- Version 1.0.0
+- Version 3.0.0
   - Initial release of SimpliFiCard SDK.
   - Added methods for showing card details, requesting physical cards, activating cards, retrieving PINs, and setting PINs.
 
