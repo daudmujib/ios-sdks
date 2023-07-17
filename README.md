@@ -167,13 +167,14 @@ SimpliFi SDKs prioritize security when handling sensitive data, such as card inf
 
 ## Release Notes and Versioning
 - SimpliFiCard SDK, version 3.0.0
-  - Initial release of SimpliFiCard SDK.
-    - Show card details.
-    - Request physical card.
-    - Activating card.
-    - Retrieving PIN.
-    - Setting PIN.
-    - eKYC verification journey.
+  - Show card details.
+  - Request physical card.
+  - Activating card.
+  - Retrieving PIN.
+  - Setting PIN.
+ 
+- SimpliFiEKyc SDK, version 3.0.0
+  - eKYC verification journey.
 
 ## Support and Contact Information
 If you need any assistance or have questions regarding SimpliFi SDKs, you can reach out to our support team at support@simplifipay.com.
